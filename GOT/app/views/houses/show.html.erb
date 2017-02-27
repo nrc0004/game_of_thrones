@@ -1,0 +1,19 @@
+<a href="/houses">return to house list</a>
+<div class="housepage">
+  <h1> House <%= @house.name %> <%= link_to("(edit)", edit_house_path(@house)) %> </h1>
+   <img src="<%= @house.sigil_url %> ">
+  <h2> House words:</h2>
+  <p> <%= @house.words %> </p>
+  <h2> Seat: </h2>
+  <p><%= @house.seat %></p>
+
+  <h2> Family Members: </h2>
+  <% @house.characters.each do |character| %>
+    <div class="character">
+      <%= link_to character.name, house_character_path(character) %>
+    </div>
+
+  <% end %>
+
+  <%= link_to "Create new house member", new_house_character_path(@house) %>
+</div>

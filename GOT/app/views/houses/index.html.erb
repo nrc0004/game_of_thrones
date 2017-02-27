@@ -1,0 +1,17 @@
+<div class="banner">
+</div>
+
+<div class="home">
+
+  <% @houses.each do |house| %>
+
+    <p> <a href="/houses/<%= house[:id]%>"><%=house.name %> </a>
+    </p>
+
+    <p><img src="<%=house.sigil_url %>"></p>
+
+  <% end %>
+</div>
+
+
+<a href="/houses/new"> Add a new house </a>
